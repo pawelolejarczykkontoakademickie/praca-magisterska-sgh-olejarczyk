@@ -1,0 +1,14 @@
+#profiles.yml
+
+przetwarzanie_elt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: przetwarzanie-elt      
+      dataset: transformed                
+      threads: 1
+      keyfile: /home/airflow/gcs/dags/service_account.json  
+      location: US
+      priority: interactive
